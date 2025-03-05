@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  app:
+    build: .  # Build the image from Dockerfile
+    volumes:
+      - .:/app  # Mount workspace to /app
+    working_dir: /app
+    command: zsh  # Open Zsh by default

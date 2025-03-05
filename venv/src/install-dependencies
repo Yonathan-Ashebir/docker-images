@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Create a virtual environment if it doesn't already exist
+if [ ! -d ".venv" ]; then
+    echo "Creating virtual environment..."
+    python -m venv .venv
+fi
+
+# Activate the virtual environment
+echo "Activating virtual environment (will persist if \`source install-dependencies\`)..."
+source "$PWD/.venv/bin/activate"
+
+# Check if pyproject.toml exists for Poetry
+if [ -f "pyproject.toml" ]; then
+    echo "Poetry project detected. Installing dependencies with Poetry..."
+
+    # Install dependencies using Poetry
+    poetry install --no-root
+
+    # Activate the Poetry virtual environment
+    poetry env use $(which python)
+else
+    echo "No Poetry project detected. Using pip..."
+
+    # Install dependencies from requirements.txt
+    if [ -f "requirements.txt" ]; then
+        echo "Installing dependencies from requirements.txt..."
+        pip install -r requirements.txt
+    else
+        echo "No requirements.txt file found. Skipping dependency installation."
+    fi
+fi
