@@ -9,7 +9,7 @@ services:
       #   - APP_PORT=8080
 
     # Specify the image name and tag
-    image: yoniash/base:1.0.0  # Replace with your desired image name and tag
+    image: yoniash/base:1.1.0  # Replace with your desired image name and tag
 
     # Environment variables (optional, for build-time or runtime)
     # environment:

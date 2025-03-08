@@ -1,5 +1,0 @@
-services:
-  base:
-    build:
-      context: . 
-    image: yoniash/venv:3.12

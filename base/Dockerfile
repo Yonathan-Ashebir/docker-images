@@ -9,6 +9,14 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh-au
     git clone https://github.com/zsh-users/zsh-syntax-highlighting /usr/share/zsh-syntax-highlighting && \
     chsh -s $(which zsh) $USER  # Set Zsh as the default shell for the user
 
+# Install more utilities
+RUN apt-get update
+RUN apt-get install -y procps net-tools iproute2 curl wget
+RUN apt-get install -y wireless-tools telnet ftp rsync fuse
+RUN apt-get install -y tree zip unzip lsof
+RUN apt-get install -y vim
+RUN rm -rf /var/lib/apt/lists/*
+
 # Set up root
 COPY src/.zshrc /root/.zshrc
 

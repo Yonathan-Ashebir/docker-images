@@ -1,5 +1,5 @@
 # Use Python 3.12 as the base image
-FROM yoniash/base:1.0.0
+FROM yoniash/base:1.1.0
 
 # Install python tools
 USER root
