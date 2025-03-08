@@ -4,7 +4,7 @@ group "default" {
 
 target "venv" {
   context    = "."
-  dockerfile = "Dockerfile"
+  dockerfile = "dockerfile"
   
   tags = [
     "yoniash/venv:3.12",
@@ -16,7 +16,7 @@ target "venv" {
 
 target "venv-ssh" {
   context    = "."
-  dockerfile = "Dockerfile.ssh"
+  dockerfile = "ssh.dockerfile"
   
   tags = [
     "yoniash/venv-ssh:3.12",
@@ -28,7 +28,7 @@ target "venv-ssh" {
 
 target "jupyter" {
   context    = "."
-  dockerfile = "Dockerfile.jupyter"
+  dockerfile = "jupyter.dockerfile"
   
   tags = [
     "yoniash/jupyter:3.12",
